@@ -75,6 +75,14 @@ public class HashMapDemo
             System.out.println(" Value:"+entry.getValue());
         }
     }
+    public String putIfAbsent(Integer key,String value)
+    {
+        return hashmap.putIfAbsent(key,value);
+    }
+    public String getOrDefault(Integer key)
+    {
+        return hashmap.getOrDefault(key,"Not Available");
+    }
 
     public static void main(String[] args)
     {
@@ -90,7 +98,13 @@ public class HashMapDemo
         demo.display();
         System.out.println("Replace:"+demo.replace(252,"Shubham","Shubham Puri"));
         demo.display();
-        demo.clear();
+//        demo.clear();
         demo.display();
+        demo.putIfAbsent(252,"Shubham");
+        System.out.println("------------------------------------");
+        demo.display();
+        System.out.println("------------------------------------");
+
+        System.out.println(demo.getOrDefault(1234));
     }
 }
